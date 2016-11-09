@@ -29,7 +29,7 @@
 		<resource type="velocity" name="xml" location="templates/plugins/fields/xml/xml-basictext.vm"/>
 	</customfield-type>
     <component key="custom-field-component" class="com.atlassian.jira.plugin.customfield.example.JiraCustomField" public="true">
-	    <interface>com.atlassian.jira.plugin.customfield.example.JiraCustomField</interface>
+	    <interface>com.atlassian.jira.plugin.customfield.example.PositiveNumberFieldMarker</interface>
     </component>
     <!-- import from the product container -->
     <component-import key="applicationProperties" interface="com.atlassian.sal.api.ApplicationProperties" />
