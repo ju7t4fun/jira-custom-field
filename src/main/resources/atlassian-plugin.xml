@@ -1,0 +1,35 @@
+<atlassian-plugin key="${project.groupId}.${project.artifactId}" name="${project.name}" plugins-version="2">
+    <plugin-info>
+        <description>${project.description}</description>
+        <version>${project.version}</version>
+        <vendor name="${project.organization.name}" url="${project.organization.url}" />
+        <param name="plugin-icon">images/pluginIcon.png</param>
+        <param name="plugin-logo">images/pluginLogo.png</param>
+    </plugin-info>
+
+    <!-- add our i18n resource -->
+    <resource type="i18n" name="i18n" location="iDalko-test-task-jira-custom-field"/>
+    
+    <!-- add our web resources -->
+    <web-resource key="iDalko-test-task-jira-custom-field-resources" name="iDalko-test-task-jira-custom-field Web Resources">
+        <dependency>com.atlassian.auiplugin:ajs</dependency>
+        
+        <resource type="download" name="iDalko-test-task-jira-custom-field.css" location="/css/iDalko-test-task-jira-custom-field.css"/>
+        <resource type="download" name="iDalko-test-task-jira-custom-field.js" location="/js/iDalko-test-task-jira-custom-field.js"/>
+        <resource type="download" name="images/" location="/images"/>
+
+        <context>iDalko-test-task-jira-custom-field</context>
+    </web-resource>
+    
+	<customfield-type key="naturalPositiveField" name="Natural Positive Number"
+                      class="com.atlassian.jira.plugin.customfield.example.JiraCustomField">
+		<description>A number field only valuate in positive range.</description>
+		<resource type="velocity" name="view" location="templates/plugins/fields/view/view-basictext.vm"/>
+		<resource type="velocity" name="edit" location="templates/edit-number-positive-field.vm"/>
+		<resource type="velocity" name="xml" location="templates/plugins/fields/xml/xml-basictext.vm"/>
+	</customfield-type>
+    
+    <!-- import from the product container -->
+    <component-import key="applicationProperties" interface="com.atlassian.sal.api.ApplicationProperties" />
+    
+</atlassian-plugin>
