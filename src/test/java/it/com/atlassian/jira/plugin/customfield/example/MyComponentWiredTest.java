@@ -1,7 +1,7 @@
 package it.com.atlassian.jira.plugin.customfield.example;
 
 import com.atlassian.jira.issue.customfields.impl.FieldValidationException;
-import com.atlassian.jira.plugin.customfield.example.JiraCustomField;
+import com.atlassian.jira.plugin.customfield.example.PositiveNumberFieldMarker;
 import com.atlassian.plugins.osgi.test.AtlassianPluginsTestRunner;
 import com.atlassian.sal.api.ApplicationProperties;
 import org.junit.Test;
@@ -14,9 +14,9 @@ public class MyComponentWiredTest
 {
     private final ApplicationProperties applicationProperties;
 
-    private final JiraCustomField jiraCustomField;
+    private final PositiveNumberFieldMarker jiraCustomField;
 
-    public MyComponentWiredTest(ApplicationProperties applicationProperties,JiraCustomField jiraCustomField)
+    public MyComponentWiredTest(ApplicationProperties applicationProperties,PositiveNumberFieldMarker jiraCustomField)
     {
         this.applicationProperties = applicationProperties;
         this.jiraCustomField = jiraCustomField;
