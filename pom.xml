@@ -105,12 +105,6 @@
                         </Export-Package>
                     </instructions>
 
-                    <testInstructions>
-                        <Import-Package>
-                            com.atlassian.jira.plugin.customfield.example
-                        </Import-Package>
-                    </testInstructions>
-
 					<!-- Uncomment to install TestKit backdoor in JIRA. -->
 					<!--<pluginArtifacts>
 						<pluginArtifact>
