@@ -91,16 +91,34 @@
                 <version>${amps.version}</version>
                 <extensions>true</extensions>
                 <configuration>
+                    <allowGoogleTracking>false</allowGoogleTracking>
                     <productVersion>${jira.version}</productVersion>
                     <productDataVersion>${jira.version}</productDataVersion>
+
+                    <enableQuickReload>true</enableQuickReload>
+                    <enableFastdev>false</enableFastdev>
+
+                    <instructions>
+                        <!--<Atlassian-Plugin-Key>${atlassian.plugin.key}</Atlassian-Plugin-Key>-->
+                        <Export-Package>
+                            com.atlassian.jira.plugin.customfield.example
+                        </Export-Package>
+                    </instructions>
+
+                    <testInstructions>
+                        <Import-Package>
+                            com.atlassian.jira.plugin.customfield.example
+                        </Import-Package>
+                    </testInstructions>
+
 					<!-- Uncomment to install TestKit backdoor in JIRA. -->
-					<pluginArtifacts>
+					<!--<pluginArtifacts>
 						<pluginArtifact>
 							<groupId>com.atlassian.jira.tests</groupId>
 							<artifactId>jira-testkit-plugin</artifactId>
 							<version>${testkit.version}</version>
 						</pluginArtifact>
-					</pluginArtifacts>
+					</pluginArtifacts>-->
                 </configuration>
             </plugin>
             <plugin>
